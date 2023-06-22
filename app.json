@@ -1,15 +1,23 @@
 {
   "expo": {
-    "name": "FocusTime",
-    "slug": "FocusTime",
+    "name": "RapNow!",
+    "slug": "rapnow",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/micorphone.png",
     "userInterfaceStyle": "light",
+    "plugins": [
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow rapnow! to access your microphone."
+        }
+      ]
+    ],
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/rapnow.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#111111"
     },
     "assetBundlePatterns": [
       "**/*"
