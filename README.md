@@ -1,4 +1,4 @@
-# RapNow!
+# 🎙️RapNow!
 
 RapNow! is a mobile application that allows you to practice your freestyle rap skills with the help of beats and a timer. Whether you're a beginner looking to improve your flow or an experienced rapper honing your skills, RapNow! provides a fun and interactive platform to enhance your freestyle abilities.
 
