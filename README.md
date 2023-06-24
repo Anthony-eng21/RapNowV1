@@ -29,7 +29,7 @@ To run the RapNow! application, you need to have the following:
 
 ### Installation
 
-1. Download the RapNow!! app from the Expo Store (for now).
+1. Download the RapNow!! app from the Expo Store (for now). [Link](https://expo.dev/@awoodworth554/rapnow?serviceType=classic&distribution=expo-go)
 2. Install the app on your mobile device.
 3. Launch the expo app then the RapNow!! to start using our app.
 
