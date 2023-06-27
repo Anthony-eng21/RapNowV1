@@ -49,6 +49,18 @@ export const beats = [
     file: require("../sounds/soulslippin.mp3"),
     producer: "Jon Presstone"
   },
+  {
+    file: require("../sounds/tomgoldstein.mp3"),
+    producer: "Tom Goldstein"
+  },
+  {
+    file: require("../sounds/draco-c.jharris.mp3"),
+    producer: "C.J. Harris"
+  },
+  {
+    file: require("../sounds/samurai-cjharris.mp3"),
+    producer: "C.J. Harris"
+  }
 ];
 
 const beatsCount = beats.length;

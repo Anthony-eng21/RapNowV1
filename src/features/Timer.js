@@ -44,15 +44,16 @@ export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
   const playSound = async () => {
     try {
       stopSound(); // Stop any currently playing sound before playing a new one
+      
       let randomIndex;
       do {
-
         randomIndex = Math.floor(Math.random() * beats.length);
-      } while (randomIndex === previousBeatIndex)
+      } while (randomIndex === previousBeatIndex); // Repeat the random selection until a different beat is chosen
 
       const selectedBeat = beats[randomIndex];
 
-      setPreviousBeatIndex(randomIndex)
+      setPreviousBeatIndex(randomIndex) // Update the previous beat index
+      
       setCurrentSongIndex(selectedBeat);
       setCurrentProducer(selectedBeat.producer);
 
