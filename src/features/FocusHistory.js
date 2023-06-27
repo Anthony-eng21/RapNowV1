@@ -8,7 +8,7 @@ export const FocusHistory = ({ history }) => {
   if (!history || !history.length)
     return (
       <View style={styles.beebee}>
-        <Text style={styles.title}>No Freestyles!</Text>
+        <Text style={styles.title}>No Freestyles!😔</Text>
       </View>
     );
 
@@ -21,7 +21,7 @@ export const FocusHistory = ({ history }) => {
   return (
     <>
       <View style={styles.beebee}>
-        <Text style={styles.title}>Freestyle List</Text>
+        <Text style={styles.title}>Freestyle List🔥</Text>
       </View>
       <View style={styles.container}>
         <View style={styles.listContainer}>

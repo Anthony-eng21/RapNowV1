@@ -32,6 +32,8 @@ export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
   const soundRef = useRef(null); // Ref to store the sound reference
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [currentProducer, setCurrentProducer] = useState("");
+  const [previousBeatIndex, setPreviousBeatIndex] = useState(null); // Keep track of the previous beat index
+
 
   useEffect(() => {
     return () => {
@@ -42,10 +44,15 @@ export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
   const playSound = async () => {
     try {
       stopSound(); // Stop any currently playing sound before playing a new one
+      let randomIndex;
+      do {
 
-      const randomIndex = Math.floor(Math.random() * beats.length);
+        randomIndex = Math.floor(Math.random() * beats.length);
+      } while (randomIndex === previousBeatIndex)
+
       const selectedBeat = beats[randomIndex];
 
+      setPreviousBeatIndex(randomIndex)
       setCurrentSongIndex(selectedBeat);
       setCurrentProducer(selectedBeat.producer);
 

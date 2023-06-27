@@ -31,7 +31,7 @@ export default function App() {
       <SafeAreaView style={styles.container}>
         {!currentSubject ? (
           <ImageBackground
-            source={require('./assets/rapnow.png')}
+            source={require('./assets/fishmicsplash.jpg')}
             resizeMode="cover"
             style={styles.img}
           >
