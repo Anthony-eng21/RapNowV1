@@ -28,7 +28,8 @@ export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
   const [isStarted, setIsStarted] = useState(false);
   const [progress, setProgress] = useState(1);
   const [minutes, setMinutes] = useState(1); //0.75 prod / 0.1 testing // 40 seconds
-  const [sound, setSound] = useState(null);
+  //never use state updating var here, may need it in the future => (sound)
+  const [_, setSound] = useState(null);
   const soundRef = useRef(null); // Ref to store the sound reference
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [currentProducer, setCurrentProducer] = useState("");
@@ -56,7 +57,7 @@ export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
       
       setCurrentSongIndex(selectedBeat);
       setCurrentProducer(selectedBeat.producer);
-
+      // The newly created and loaded Sound object.
       const { sound: newSound } = await Audio.Sound.createAsync(
         selectedBeat.file,
         {
