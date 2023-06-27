@@ -229,7 +229,7 @@ const styles = StyleSheet.create({
     paddingTop: spacing.xxl,
   },
   clearSubjectWrapper: {
-    marginTop: 15,
+    marginTop: 20,
     marginLeft: 28,
     flexDirection: "row",
     justifyContent: "flex-start",

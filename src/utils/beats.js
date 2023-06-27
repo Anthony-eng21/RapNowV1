@@ -44,7 +44,11 @@ export const beats = [
   {
     file: require("../sounds/KashoutZxn0.mp3"),
     producer: "KashoutZxn0"
-  }
+  },
+  {
+    file: require("../sounds/soulslippin.mp3"),
+    producer: "Jon Presstone"
+  },
 ];
 
 const beatsCount = beats.length;
