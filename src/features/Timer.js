@@ -106,6 +106,7 @@ export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
       return;
     }
     stopSound(); // Stop the current song
+    //curSong + the next with the remainder of the arr length 
     const nextSongIndex = (currentSongIndex + 1) % beats.length; // Calculate the index of the next song
     setCurrentSongIndex(nextSongIndex); // Update the current song index
     playSound(); // Play the next song
