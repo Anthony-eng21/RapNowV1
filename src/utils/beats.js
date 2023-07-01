@@ -39,7 +39,7 @@ export const beats = [
   },
   {
     file: require("../sounds/new_jazz_type_beat_2.wav"),
-    producer: "Kashoutzxn0"
+    producer: "KashoutZxn0"
   },
   {
     file: require("../sounds/KashoutZxn0.mp3"),
