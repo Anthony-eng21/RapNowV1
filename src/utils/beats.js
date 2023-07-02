@@ -39,12 +39,20 @@ export const beats = [
   },
   {
     file: require("../sounds/new_jazz_type_beat_2.wav"),
-    producer: "KashoutZxn0"
+    producer: "Kashoutzxn0"
   },
   {
     file: require("../sounds/KashoutZxn0.mp3"),
-    producer: "KashoutZxn0"
+    producer: "Kashoutzxn0"
   },
+  {
+    file: require("../sounds/Kashpaintshi.mp3"), //good
+    producer: "Kashoutzxn0"
+  },
+  // {
+  //   file: require("../sounds/zaytoven.mp3"), //nuer beat
+  //   producer: "KashoutZxn0"
+  // },
   {
     file: require("../sounds/soulslippin.mp3"),
     producer: "Jon Presstone"
