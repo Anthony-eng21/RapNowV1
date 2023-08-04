@@ -20,25 +20,33 @@ export const RoundedButton = ({
   ...props
 }) => {
   return (
-    <TouchableOpacity style={[styles(size).radius, style]} onPress={props.onPress}>
+    // TouchableOpacity is used to create a pressable button
+    <TouchableOpacity style={[styles(size).button, style]} activeOpacity={0.5} onPress={props.onPress}>
+      {/* Display the text inside the button */}
       <Text style={[styles(size).text, textStyle]}>{props.title}</Text>
     </TouchableOpacity>
   );
 };
 
-// Styles for the RoundedButton component
-const styles = (size) => ({
-  radius: {
+// Define the styles for the RoundedButton component
+const styles = (size) => StyleSheet.create({
+  // Style for the button container
+  button: {
     borderRadius: size / 2,
     width: size,
     height: size,
     alignItems: 'center',
-    justifyContent: "center",
-    borderColor: colors.wuYellow,
-    borderWidth: 2
+    justifyContent: 'center',
+    backgroundColor: colors.dimGrey, // Add a background color
+    shadowColor: colors.white, // Add shadow color
+    shadowOffset: { width: 2, height: 2 }, // Add shadow offset
+    shadowOpacity: 0.2, // Add shadow opacity
+    shadowRadius: 4, // Add shadow radius
+    elevation: 10, // Add shadow for Android
   },
+  // Style for the text inside the button
   text: {
-    color: colors.wuYellow,
-    fontSize: size / 4
+    color: colors.white,
+    fontSize: size / 4.5,
   },
 });

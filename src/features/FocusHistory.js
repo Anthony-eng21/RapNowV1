@@ -11,12 +11,12 @@ export const FocusHistory = ({ history }) => {
 
   const renderItem = ({ item }) => (
     <LinearGradient
-      colors={['#7028E4', '#9A6DDE', '#C6A6F7']} // Define the colors for the gradient
+      colors={["#F7971E", "#FFD200", "#FFAA00"]} // Define the colors for the gradient
       start={[1, 1]} // Define the start point of the gradient
       end={[0, 0]} // Define the end point of the gradient
       style={styles.itemContainer}
     >
-      <Text style={styles.item}>{`${item}`}</Text>
+        <Text style={styles.item}>{`${item}`}</Text>
     </LinearGradient>
   );
 
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     opacity: 0.9,
   },
   item: {
-    color: colors.darkBlue,
+    color: colors.white,
     fontSize: fontSizes.mmd,
     fontWeight: "bold",
     textAlign: "center",

@@ -1,5 +1,7 @@
 export const colors = {
-    white: "white",
+    white: "#FAEBD7",
+    vanilla: "#F3E5AB",
+    dark: "#050505",
     darkBlue: "darkblue",
     mediumOrchid: "mediumorchid", 
     slateGray: "slategray",

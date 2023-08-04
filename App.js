@@ -12,14 +12,16 @@ import {
 //on android it falls back onto a
 import React, { useState } from "react";
 
+import back from "./assets/moonRapNow.jpg";
+
 import { colors } from "./src/utils/colors";
 //Features 
 import { FocusHistory } from "./src/features/FocusHistory";
 import { Focus } from "./src/features/Focus";
 import { Timer } from "./src/features/Timer";
 
-import { fontSizes } from "./src/utils/sizes";
-import { spacing } from "./src/utils/sizes";
+// import { fontSizes } from "./src/utils/sizes";
+// import { spacing } from "./src/utils/sizes";
 
 export default function App() {
   const [currentSubject, setCurrentSubject] = useState();
@@ -31,7 +33,7 @@ export default function App() {
       <SafeAreaView style={styles.container}>
         {!currentSubject ? (
           <ImageBackground
-            source={require('./assets/fishmicsplash.jpg')}
+            source={back}
             resizeMode="cover"
             style={styles.img}
           >
@@ -56,9 +58,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: Platform === "android" ? StatusBar.currentHeight : 0,
-    backgroundColor: colors.dimGrey,
+    backgroundColor: colors.dark,
   },
   img: {
     flex: 1,
+    width: "100%",
+    height: "100%",
   },
 });

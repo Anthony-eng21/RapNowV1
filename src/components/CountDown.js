@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: fontSizes.xxxl,
     fontWeight: "bold",
-    color: colors.dimGrey,
+    color: colors.white,
     padding: spacing.lg,
   },
   container: {
