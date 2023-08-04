@@ -35,7 +35,6 @@ export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
   const [currentProducer, setCurrentProducer] = useState("");
   const [previousBeatIndex, setPreviousBeatIndex] = useState(null); // Keep track of the previous beat index
 
-
   useEffect(() => {
     return () => {
       stopSound(); // Cleanup function to stop the sound when unmounting the component
@@ -55,7 +54,7 @@ export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
 
       setPreviousBeatIndex(randomIndex) // Update the previous beat index
       
-      setCurrentSongIndex(selectedBeat);
+      setCurrentSongIndex(selectedBeat.id);
       setCurrentProducer(selectedBeat.producer);
       // The newly created and loaded Sound object.
       const { sound: newSound } = await Audio.Sound.createAsync(
@@ -102,10 +101,10 @@ export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
 
   const skipToNextSong = () => {
     //!isStarted is added to check if the timer is started before allowing to skip to the next song. If the timer is not started, the function will return early without performing any action.
-    if (!currentSongIndex || !isStarted) {
+    if (!currentSongIndex || !isStarted || !soundRef.current) {
       return;
     }
-    stopSound(); // Stop the current song
+    // stopSound(); // Stop the current song
     //curSong + the next with the remainder of the arr length 
     const nextSongIndex = (currentSongIndex + 1) % beats.length; // Calculate the index of the next song
     setCurrentSongIndex(nextSongIndex); // Update the current song index
