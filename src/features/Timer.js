@@ -1,11 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import {
-  View,
-  StyleSheet,
-  Text,
-  Vibration,
-  ImageBackground,
-} from "react-native";
+import { View, StyleSheet, Text, Vibration } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { ProgressBar } from "react-native-paper";
 import { Timing } from "./Timing";
@@ -141,78 +135,76 @@ export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
   };
 
   return (
-    <ImageBackground  source={require("../../assets/moonRapNow.jpg")} resizeMode="repeat" style={styles.container}>
-      <View style={styles.container}>
-        <View style={styles.countdown}>
-          <Countdown
-            minutes={minutes}
-            isPaused={!isStarted}
-            onProgress={setProgress}
-            onEnd={onEnd}
-          />
-          <View style={{ paddingTop: spacing.xxl }}>
-            <Text style={styles.title}>Rapping about:</Text>
-            <Text style={styles.task}>{focusSubject}</Text>
-          </View>
+    <View style={styles.container}>
+      <View style={styles.countdown}>
+        <Countdown
+          minutes={minutes}
+          isPaused={!isStarted}
+          onProgress={setProgress}
+          onEnd={onEnd}
+        />
+        <View style={{ paddingTop: spacing.xxl }}>
+          <Text style={styles.title}>Rapping about:</Text>
+          <Text style={styles.task}>{focusSubject}</Text>
         </View>
-        <View style={{ paddingTop: spacing.sm }}>
-          <ProgressBar
-            progress={progress}
-            color={colors.white}
-            style={{ height: 12, marginHorizontal: 5 }}
-          />
-        </View>
-        <View style={styles.clearSubjectWrapper}>
-          {/* back btn */}
-          <RoundedButton
-            title={uSymb.backArrowSymb}
-            size={65}
-            onPress={() => {
-              clearSubject();
-              stopSound();
-            }}
-          />
-          {currentProducer && (
-            <LinearGradient
-              colors={["#F7971E", "#FFD200", "#FFAA00"]} // Define the colors for the gradient
-              start={[1, 1]} // Define the start point of the gradient
-              end={[0, 0]} // Define the end point of the gradient
-              style={styles.gradient}
-            >
-              <Text style={styles.producerTag}>{currentProducer}</Text>
-            </LinearGradient>
-          )}
-        </View>
-        {/* play||pause */}
-        <View style={styles.buttonWrapper}>
-          <RoundedButton
-            title={`${isStarted ? uSymb.pauseSymb : uSymb.startSymb}\n${
-              isStarted ? "Pause" : "Play"
-            }`}
-            onPress={handlePlayPause}
-            textStyle={{
-              textAlign: "center",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-            style={{ marginLeft: 100 }}
-          />
-          {/* manipulate song */}
-          <RoundedButton
-            title={`${uSymb.nextArrowSymb}\nnext`}
-            size={65}
-            textStyle={{ textAlign: "center" }}
-            style={{ marginLeft: 40 }}
-            onPress={() => skipToNextSong()}
-          />
-        </View>
-        <>
-          <View style={styles.timingWrapper}>
-            <Timing onChangeTime={setMinutes} />
-          </View>
-        </>
       </View>
-    </ImageBackground>
+      <View style={{ paddingTop: spacing.sm }}>
+        <ProgressBar
+          progress={progress}
+          color={colors.white}
+          style={{ height: 12, marginHorizontal: 5 }}
+        />
+      </View>
+      <View style={styles.clearSubjectWrapper}>
+        {/* back btn */}
+        <RoundedButton
+          title={uSymb.backArrowSymb}
+          size={65}
+          onPress={() => {
+            clearSubject();
+            stopSound();
+          }}
+        />
+        {currentProducer && (
+          <LinearGradient
+            colors={["#F7971E", "#FFD200", "#FFAA00"]} // Define the colors for the gradient
+            start={[1, 1]} // Define the start point of the gradient
+            end={[0, 0]} // Define the end point of the gradient
+            style={styles.gradient}
+          >
+            <Text style={styles.producerTag}>{currentProducer}</Text>
+          </LinearGradient>
+        )}
+      </View>
+      {/* play||pause */}
+      <View style={styles.buttonWrapper}>
+        <RoundedButton
+          title={`${isStarted ? uSymb.pauseSymb : uSymb.startSymb}\n${
+            isStarted ? "Pause" : "Play"
+          }`}
+          onPress={handlePlayPause}
+          textStyle={{
+            textAlign: "center",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          style={{ marginLeft: 100 }}
+        />
+        {/* manipulate song */}
+        <RoundedButton
+          title={`${uSymb.nextArrowSymb}\nnext`}
+          size={65}
+          textStyle={{ textAlign: "center" }}
+          style={{ marginLeft: 40 }}
+          onPress={() => skipToNextSong()}
+        />
+      </View>
+      <>
+        <View style={styles.timingWrapper}>
+          <Timing onChangeTime={setMinutes} />
+        </View>
+      </>
+    </View>
   );
 };
 

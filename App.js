@@ -15,7 +15,7 @@ import React, { useState } from "react";
 import back from "./assets/moonRapNow.jpg";
 
 import { colors } from "./src/utils/colors";
-//Features 
+//Features
 import { FocusHistory } from "./src/features/FocusHistory";
 import { Focus } from "./src/features/Focus";
 import { Timer } from "./src/features/Timer";
@@ -32,22 +32,20 @@ export default function App() {
 
       <SafeAreaView style={styles.container}>
         {!currentSubject ? (
-          <ImageBackground
-            source={back}
-            resizeMode="cover"
-            style={styles.img}
-          >
+          <ImageBackground source={back} resizeMode="cover" style={styles.img}>
             <Focus addSubject={setCurrentSubject} />
             <FocusHistory history={history} />
           </ImageBackground>
         ) : (
-          <Timer
-            focusSubject={currentSubject}
-            onTimerEnd={(subject) => {
-              setHistory([...history, subject]) //includes the incoming focusSubject and the shows all the items before
-            }}
-            clearSubject={() => setCurrentSubject(null)}
-          />
+          <ImageBackground source={back} resizeMode="cover" style={styles.img}>
+            <Timer
+              focusSubject={currentSubject}
+              onTimerEnd={(subject) => {
+                setHistory([...history, subject]); //includes the incoming focusSubject and the shows all the items before
+              }}
+              clearSubject={() => setCurrentSubject(null)}
+            />
+          </ImageBackground>
         )}
       </SafeAreaView>
     </>

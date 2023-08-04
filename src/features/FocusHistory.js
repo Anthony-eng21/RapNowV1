@@ -16,7 +16,7 @@ export const FocusHistory = ({ history }) => {
       end={[0, 0]} // Define the end point of the gradient
       style={styles.itemContainer}
     >
-        <Text style={styles.item}>{`${item}`}</Text>
+      <Text style={styles.item}>{`${item}`}</Text>
     </LinearGradient>
   );
 
